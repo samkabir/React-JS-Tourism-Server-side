@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const ObjectId = require('mongodb').ObjectId;
 const app = express();
-const port = process.evn.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 //middleware
 app.use(cors());
@@ -96,10 +96,10 @@ async function run(){
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Evanto Tourism limited Server!')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Evanto Tourism listening at http://localhost:${port}`)
 })
 
