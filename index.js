@@ -53,8 +53,6 @@ async function run(){
         // Use POST to get data by Email
         app.post('/toursBooked/byEmail', async (req, res) => {
           const emailOfPerson = req.body;
-          console.log(emailOfPerson);
-          // { $text: { $search: "\"coffee shop\"" } }
           const query = { email: { $in: emailOfPerson}}
           const products = await toursBooked.find(query).toArray();
           res.send(products);
